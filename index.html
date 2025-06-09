@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ekran starta -->
+    <div id="start-screen" class="screen active">
+        <h1>Teoreticheskiy test po vozhdeniyu</h1>
+        <h3>Dobro pozhalovat!</h3>
+        <p>
+            Posle togo kak vy nazhmete vnizu na knopku
+            <span style="font-weight: bold; color: green">Nachat test!</span>,
+            nachnetsya test, taymer
+            <span style="font-weight:bold; color: red">(15 minut)</span>,
+            vam budet pokazan vopros s kartinkoy i chetyrmya variantami otveta.
+        </p>
+        <p>
+            Vyberite pravilnyy otvet i nazhmite
+            <span style="color:green; font-weight: bold">"Prodolzhit"</span>
+        </p>
+        <button onclick="startTest()" class="start-btn">Nachat test!</button>
+
+
+        <img id="test-img" src="" alt="test">
+        <button onclick="document.getElementById('test-img').src = 'photo/nr1.png'">�������� ��������</button>
+    </div>
+
+    <!-- Ekran voprosa -->
+    <div id="question-screen" class="screen">
+        <h2 id="numberQuestion"></h2>
+        <p id="textQuestion"></p>
+        <img id="imageQuestion" alt="" style="max-width: 100%; height: auto;">
+        <div id="optionsQuestion"></div>
+        <button id="buttonQuestion" onclick="nextQuestion()">Prodolzhit</button>
+    </div>
+
+    <!-- Ekran rezultata-->
+    <div id="result-screen" class="screen">
+        <h2>tut teskt</h2>
+        <p>tut tozhe</p>
+
+        <h3 id="resultQuestion"></h3>
+
+
+        <button onclick="resultQuestion()">Zakonchitj</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
