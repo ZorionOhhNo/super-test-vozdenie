@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.screen {
+    display: none;
+}
+
+    .screen.active {
+        display: block;
+    }
+
+button {
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: lime;
+    color: black;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+img {
+    padding: 20px 20px;
+    max-width: 700px;
+    max-height: 700px;
+}
+
+#optionsQuestion button {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    background-color: white;
+    border: 2px solid #ccc;
+    transition: 0.2s;
+}
+
+    #optionsQuestion button:hover {
+        background-color: #e0ffe0;
+    }
+
+    #optionsQuestion button.selected {
+        background-color: limegreen;
+        color: white;
+        border-color: green;
+        font-weight: bold;
+    }
