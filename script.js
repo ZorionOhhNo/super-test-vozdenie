@@ -51,9 +51,9 @@ function showQuestion() {
         const btn = document.createElement("button");
         btn.innerText = option;
         btn.addEventListener("click", function () {
-            // Снять выделение со всех кнопок
+            // Г‘Г­ГїГІГј ГўГ»Г¤ГҐГ«ГҐГ­ГЁГҐ Г±Г® ГўГ±ГҐГµ ГЄГ­Г®ГЇГ®ГЄ
             Array.from(optionsDiv.children).forEach(b => b.classList.remove("selected"));
-            // Выделить выбранную кнопку
+            // Г‚Г»Г¤ГҐГ«ГЁГІГј ГўГ»ГЎГ°Г Г­Г­ГіГѕ ГЄГ­Г®ГЇГЄГі
             btn.classList.add("selected");
             selectAnswer = btn.innerText;
         });
