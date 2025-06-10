@@ -1,6 +1,8 @@
     let current = 0;
 let result = 0;
 let selectAnswer = null;
+let timer; 
+let timeLeft = 900;
 const questions = [
     {
         numberQuestion: "Pirmais jautājums!",
@@ -96,6 +98,9 @@ const questions = [
 function startTest() {
     result = 0;
     selectAnswer = null;
+    timeLeft = 900;
+    clearInterval(timer);
+    startTimer();
     document.getElementById("start-screen").classList.remove("active");
     document.getElementById("question-screen").classList.add("active");
     current = 0;
@@ -126,8 +131,30 @@ function showQuestion() {
 }
 
 
+function startTimer() {
+    updateTimerDisplay();
+    timer = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            endTest(true); 
+        }
+    }, 1000);
+}
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    document.getElementById("timer").innerText = `Laiks: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+}   
+
 function showResult() {
-    document.getElementById("resultQuestion").innerText = `pareizās atbildes: ${result} no ${questions.length}`;
+    const wrongAnswers = questions.length - result;
+    const passed = wrongAnswers <= 2;
+
+
+    document.getElementById("resultQuestion").innerText = `pareizās atbildes: ${result} no ${questions.length}\n` + (passed ? "Tests nokārtots!" : "Tests nav nokārtots.");
 }
 
 
@@ -135,8 +162,6 @@ function resultQuestion() {
     alert("Arivederci");
     location.reload();
 }
-
-
 
 
 function nextQuestion() {
@@ -149,9 +174,14 @@ function nextQuestion() {
     if (current < questions.length) {
         showQuestion();
     } else {
-        alert("tests ir beidzies!");
-        document.getElementById("question-screen").classList.remove("active");
-        document.getElementById("result-screen").classList.add("active")
-        showResult();
+        endTest();
     }
+}
+
+function endTest(forced = false) {
+    clearInterval(timer);
+    if (forced) alert("Laiks beidzies!");
+    document.getElementById("question-screen").classList.remove("active");
+    document.getElementById("result-screen").classList.add("active");
+    showResult();
 }
