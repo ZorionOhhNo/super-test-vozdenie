@@ -9,20 +9,20 @@
 
     <!-- Ekran starta -->
     <div id="start-screen" class="screen active">
-        <h1>Teoreticheskiy test po vozhdeniyu</h1>
-        <h3>Dobro pozhalovat!</h3>
+        <h1>Teorētiskais braukšanas tests</h1>
+        <h3>Laipni lūdzam!</h3>
         <p>
-            Posle togo kak vy nazhmete vnizu na knopku
-            <span style="font-weight: bold; color: green">Nachat test!</span>,
-            nachnetsya test, taymer
-            <span style="font-weight:bold; color: red">(15 minut)</span>,
-            vam budet pokazan vopros s kartinkoy i chetyrmya variantami otveta.
+            Pēc tam, kad nospiedīsit pogu
+            <span style="font-weight: bold; color: green">Sākt testu!</span>,
+            sāksies tests, taimeris
+            <span style="font-weight:bold; color: red">(2 dienas)</span>,
+            jums tiks parādīts jautājums ar attēlu un četriem atbilžu variantiem.
         </p>
         <p>
-            Vyberite pravilnyy otvet i nazhmite
-            <span style="color:green; font-weight: bold">"Prodolzhit"</span>
+            Izvēlieties pareizo atbildi un nospiediet
+            <span style="color:green; font-weight: bold">"Turpināt"</span>
         </p>
-        <button onclick="startTest()" class="start-btn">Nachat test!</button>
+        <button onclick="startTest()" class="start-btn">Sākt testu!</button>
     </div>
 
     <!-- Ekran voprosa -->
@@ -31,18 +31,14 @@
         <p id="textQuestion"></p>
         <img id="imageQuestion" alt="" style="max-width: 100%; height: auto;">
         <div id="optionsQuestion"></div>
-        <button id="buttonQuestion" onclick="nextQuestion()">Prodolzhit</button>
+        <button id="buttonQuestion" onclick="nextQuestion()">Turpinājums</button>
     </div>
 
     <!-- Ekran rezultata-->
     <div id="result-screen" class="screen">
-        <h2>tut teskt</h2>
-        <p>tut tozhe</p>
-
+        <h2 color="green">Apsveicam jūs ar testa pabeigšanu!</h2>
         <h3 id="resultQuestion"></h3>
-
-
-        <button onclick="resultQuestion()">Zakonchitj</button>
+        <button onclick="resultQuestion()">Pabeigt</button>
     </div>
 
 
