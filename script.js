@@ -51,9 +51,7 @@ function showQuestion() {
         const btn = document.createElement("button");
         btn.innerText = option;
         btn.addEventListener("click", function () {
-            // Ñíÿòü âûäåëåíèå ñî âñåõ êíîïîê
             Array.from(optionsDiv.children).forEach(b => b.classList.remove("selected"));
-            // Âûäåëèòü âûáðàííóþ êíîïêó
             btn.classList.add("selected");
             selectAnswer = btn.innerText;
         });
